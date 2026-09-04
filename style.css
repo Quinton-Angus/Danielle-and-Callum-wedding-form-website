@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 * {
     font-size: 10px;
@@ -16,11 +17,14 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 /*/ Header styling /*/
 
 header {
     width: 100%;
+    margin-bottom: 7rem;
 }
 
 #headerDesktop {
@@ -88,7 +92,7 @@ header {
     .headerMobileActivated {
         width: 100%;
         height: 230px;
-        background-color: var(--red);
+        background-color: rgba(8, 8, 8, 0.05);
         animation: hamBurgerActivate 0.5s ease-in-out;
         z-index: 1000;
         position: fixed;
@@ -101,10 +105,11 @@ header {
         border-bottom-right-radius: 50px;
         border-bottom-left-radius: 50px;
         box-sizing: border-box;
+        backdrop-filter: blur(25px);
     }
 
     #headerMobileHamburgerClose {
-        background-image: url("./assets/Header_icon_white.svg");
+        background-image: url("./assets/Header_icon_red.svg");
         background-repeat: no-repeat;
         background-size: cover;
         height: 18px;
@@ -113,3 +118,17 @@ header {
     }
 }
 
+/*/ Form styling /*/
+
+#title {
+    font-family: "Cinzel";
+    color: var(--red);
+    font-weight: 800;
+    font-size: 2.5rem;
+}
+
+#guestForm {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
