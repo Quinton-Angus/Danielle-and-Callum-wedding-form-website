@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    font-size: 10px;
+}
+
+/*/ Header styling /*/
+
+header {
+    margin-top: 3rem;
+    margin-left: 5rem;
+}
+
+#headerDesktop {
+    gap: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#headerMobile {
+    display: none;
+}
+
+.headerLink {
+    font-family: 'Inter';
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.headerLinkActive {
+    font-family: 'Inter';
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+
+@media(max-width: 600px) {
+    #headerDesktop {
+        display: none;
+    }
+
+    #headerMobile {
+        display: flex;
+    }
+}
+
