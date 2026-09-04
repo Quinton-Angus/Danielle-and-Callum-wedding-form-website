@@ -2,6 +2,8 @@
 
 * {
     font-size: 10px;
+    text-decoration: none;
+    color: #080808;
 
     --red: #761111
 }
@@ -43,6 +45,7 @@ header {
     font-size: 1.5rem;
     font-weight: 600;
     cursor: pointer;
+    text-decoration: underline;
 }
 
 .headerLinkMobileText {
@@ -84,7 +87,7 @@ header {
 
     .headerMobileActivated {
         width: 100%;
-        height: 200px;
+        height: 230px;
         background-color: var(--red);
         animation: hamBurgerActivate 0.5s ease-in-out;
         z-index: 1000;
@@ -97,6 +100,7 @@ header {
         gap: 15px;
         border-bottom-right-radius: 50px;
         border-bottom-left-radius: 50px;
+        box-sizing: border-box;
     }
 
     #headerMobileHamburgerClose {
