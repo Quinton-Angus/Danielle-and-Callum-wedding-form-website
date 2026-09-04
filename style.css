@@ -2,13 +2,23 @@
 
 * {
     font-size: 10px;
+
+    --red: #761111
 }
 
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 /*/ Header styling /*/
 
 header {
-    margin-top: 3rem;
-    margin-left: 5rem;
+    width: 100%;
 }
 
 #headerDesktop {
@@ -17,15 +27,8 @@ header {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-}
-
-#headerMobile {
-    display: none;
-    background-image: url("./assets/Header icon red.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 18px;
-    width: 25px;
+    margin-top: 30px;
+    margin-left: 40px;
 }
 
 .headerLink {
@@ -42,6 +45,10 @@ header {
     cursor: pointer;
 }
 
+.headerLinkMobileText {
+    color: #ffffff;
+}
+
 
 @media(max-width: 600px) {
     #headerDesktop {
@@ -51,6 +58,7 @@ header {
     #headerMobileWrapper {
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
 
     #headerMobileHamburger {
@@ -59,6 +67,8 @@ header {
         background-size: cover;
         height: 18px;
         width: 25px;
+        margin-top: 30px;
+        margin-left: 40px;
     }
 
     @keyframes  hamBurgerActivate{
@@ -66,16 +76,36 @@ header {
         to {height: 200px}
     }
 
-    .headerMobileDeactive {
+    .headerMobileDeactivated {
         width: 100%;
         height: 0;
+        display: none;
     }
 
     .headerMobileActivated {
         width: 100%;
         height: 200px;
-        background-color: black;
-        animation: hamBurgerActivate 1s ease-in-out;
+        background-color: var(--red);
+        animation: hamBurgerActivate 0.5s ease-in-out;
+        z-index: 1000;
+        position: fixed;
+        overflow: hidden;
+        padding-top: 30px;
+        padding-left: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        border-bottom-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
+
+    #headerMobileHamburgerClose {
+        background-image: url("./assets/Header_icon_white.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 18px;
+        width: 25px;
+        margin-bottom: 25px;
     }
 }
 
