@@ -21,18 +21,25 @@ header {
 
 #headerMobile {
     display: none;
+    background-image: url("./assets/Header icon red.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 18px;
+    width: 25px;
 }
 
 .headerLink {
     font-family: 'Inter';
     font-size: 1.5rem;
     font-weight: 400;
+    cursor: pointer;
 }
 
 .headerLinkActive {
     font-family: 'Inter';
     font-size: 1.5rem;
     font-weight: 600;
+    cursor: pointer;
 }
 
 
@@ -41,8 +48,32 @@ header {
         display: none;
     }
 
-    #headerMobile {
+    #headerMobileWrapper {
         display: flex;
+        flex-direction: column;
+    }
+
+    #headerMobileHamburger {
+        background-image: url("./assets/Header icon red");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    @keyframes  hamBurgerActivate{
+        from {height: 0;}
+        to {height: 200px}
+    }
+
+    #headerMobileDeactive {
+        width: 100%;
+        height: 0;
+    }
+
+    #headerMobileActive {
+        width: 100%;
+        height: 0;
+        background-color: black;
+        animation: hamBurgerActivate 1s ease-in-out;
     }
 }
 
