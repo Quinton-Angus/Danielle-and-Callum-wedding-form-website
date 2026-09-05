@@ -17,6 +17,7 @@ const placeOrder = document.getElementById("placeOrder")
 const orderNumber = document.getElementById("orderNumber")
 
 let quantity = 1
+let cartQuantity = 0
 
 hamburgerMenuOpenBtn?.addEventListener("click", () => {
     headerMobile?.classList.remove("headerMobileDeactivated")
@@ -28,29 +29,41 @@ headerMobileHamburgerClose?.addEventListener("click", () => {
     headerMobile?.classList.add("headerMobileDeactivated")
 })
 
-function updateCart() {
+function updateProductQuantity() {
     quantityElement.textContent = quantity
-    checkoutQuantity.textContent = quantity
-    cartSummary.textContent = `Origami Paper × ${quantity}`
+}
+
+function updateCart() {
+    if (cartQuantity < 1) {
+        cartSummary.textContent = "Nothing in your cart yet."
+        checkoutButton.disabled = true
+        checkoutQuantity.textContent = quantity
+        return
+    }
+
+    checkoutQuantity.textContent = cartQuantity
+    cartSummary.textContent = `Origami Paper × ${cartQuantity}`
     checkoutButton.disabled = false
 }
 
 document.getElementById("decreaseQuantity")?.addEventListener("click", () => {
     quantity = Math.max(1, quantity - 1)
-    updateCart()
+    updateProductQuantity()
 })
 
 document.getElementById("increaseQuantity")?.addEventListener("click", () => {
     quantity = Math.min(99, quantity + 1)
-    updateCart()
+    updateProductQuantity()
 })
 
 document.getElementById("addToCart")?.addEventListener("click", () => {
+    cartQuantity = quantity
     updateCart()
     checkoutButton.focus()
 })
 
 checkoutButton?.addEventListener("click", () => {
+    checkoutQuantity.textContent = cartQuantity
     checkoutView.classList.remove("hidden")
     shopView.classList.add("hidden")
     window.scrollTo({ top: 0, behavior: "smooth" })
@@ -75,7 +88,7 @@ orderForm?.addEventListener("submit", async (event) => {
         const response = await fetch(API_URL, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ name, email, quantity })
+            body: JSON.stringify({ name, email, quantity: cartQuantity })
         })
 
         const result = await response.json().catch(() => ({}))
@@ -98,4 +111,5 @@ orderForm?.addEventListener("submit", async (event) => {
     }
 })
 
+updateProductQuantity()
 updateCart()
