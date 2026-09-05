@@ -1,0 +1,120 @@
+.origamiContent {
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto 12rem;
+    font-family: "Inter";
+}
+
+.shopPanel { width: 100%; }
+.hidden { display: none !important; }
+
+.shopEyebrow {
+    color: var(--red);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    margin-bottom: 1rem;
+}
+
+.shopPanel h1 {
+    font-family: "Cinzel";
+    color: var(--red);
+    font-size: 3rem;
+    margin: 0 0 1rem;
+}
+
+.shopDescription {
+    font-size: 1.35rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin: 0 0 4rem;
+    max-width: 620px;
+}
+
+.productCard {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    border: 1px solid var(--red);
+    border-radius: 8px;
+    padding: 2.5rem;
+    box-sizing: border-box;
+    margin-bottom: 2rem;
+}
+
+.paperPreview {
+    flex: 0 0 190px;
+    height: 190px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #f6eee1, #e8d2bc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 8px 8px 0 rgba(118, 17, 17, .12);
+}
+
+.paperPreview span {
+    font-family: "Cinzel";
+    font-size: 6rem;
+    color: var(--red);
+    transform: rotate(-12deg);
+}
+
+.productDetails { flex: 1; }
+.productDetails h2 { font-size: 2rem; margin: 0 0 .8rem; color: var(--red); }
+.productDetails p { font-size: 1.2rem; font-weight: 300; margin: 0 0 2.5rem; }
+
+.quantityRow { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; font-size: 1.2rem; }
+.quantityControl { display: flex; align-items: center; border: 1px solid var(--red); border-radius: 5px; overflow: hidden; }
+.quantityControl button { width: 3.5rem; height: 3.5rem; border: 0; background: #fff; color: var(--red); font-size: 2rem; cursor: pointer; }
+.quantityControl span { width: 3.5rem; text-align: center; font-size: 1.3rem; }
+
+#addToCart, #placeOrder, .shopButton, #checkoutButton {
+    border: 0;
+    border-radius: 5px;
+    background: var(--red);
+    color: #fff;
+    font-family: "Inter";
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 1rem 1.8rem;
+    cursor: pointer;
+}
+
+#addToCart { width: 100%; }
+#addToCart:hover, #placeOrder:hover, .shopButton:hover, #checkoutButton:not(:disabled):hover { opacity: .9; }
+
+.cartBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem 2rem;
+    background: rgba(118, 17, 17, .05);
+    border-radius: 8px;
+}
+.cartBar strong { display: block; color: var(--red); font-size: 1.3rem; margin-bottom: .5rem; }
+.cartBar span { font-size: 1.1rem; font-weight: 300; }
+#checkoutButton:disabled { opacity: .45; cursor: not-allowed; }
+
+.backButton { border: 0; background: transparent; color: var(--red); padding: 0; font-family: "Inter"; font-size: 1.2rem; cursor: pointer; margin-bottom: 3rem; }
+#orderForm { max-width: 500px; display: flex; flex-direction: column; }
+#orderForm label { color: var(--red); font-size: 1.2rem; margin: 0 0 .5rem 1rem; }
+#orderForm input { box-sizing: border-box; width: 100%; margin-bottom: 2rem; }
+.orderSummary { display: flex; justify-content: space-between; padding: 1.5rem; border: 1px solid var(--red); border-radius: 5px; font-size: 1.3rem; margin: .5rem 0 2rem; }
+#orderError { min-height: 2rem; color: #b00000; font-size: 1rem; margin-bottom: 1rem; }
+#placeOrder:disabled { opacity: .6; cursor: wait; }
+
+.successMark { width: 6rem; height: 6rem; border-radius: 50%; background: var(--red); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 3rem; margin-bottom: 2rem; }
+#orderNumber { font-size: 1.2rem; font-weight: 600; margin-bottom: 2rem; }
+.shopButton { display: inline-block; }
+
+@media(max-width: 600px) {
+    .origamiContent { margin-bottom: 8rem; }
+    .shopPanel h1 { font-size: 2.5rem; }
+    .productCard { flex-direction: column; align-items: stretch; padding: 1.8rem; gap: 2rem; }
+    .paperPreview { flex-basis: auto; width: 100%; height: 160px; }
+    .cartBar { align-items: stretch; flex-direction: column; }
+    #checkoutButton { width: 100%; }
+}

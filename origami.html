@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Origami shop</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./origami.css">
+</head>
+<body>
+    <header>
+        <div id="headerDesktop">
+            <img src="./assets/QDS logo red.svg">
+            <a href="https://admin.danielle-and-callum.quintondev.com"><div class="headerLink">Admin portal</div></a>
+            <a href="https://form.danielle-and-callum.quintondev.com"><div class="headerLink">Information form</div></a>
+            <a href="./origami.html"><div class="headerLinkActive">Origami</div></a>
+            <a href="https://admin.danielle-and-callum.quintondev.com/login"><div class="headerLink">Login</div></a>
+            <a href="mailto:support@quintondev.com"><div class="headerLink">Support</div></a>
+        </div>
+        <div id="headerMobileWrapper">
+            <div class="headerMobileDeactivated" id="headerMobile">
+                <div id="headerMobileHamburgerClose"></div>
+                <a href="https://admin.danielle-and-callum.quintondev.com"><div class="headerLink">Admin portal</div></a>
+                <a href="https://form.danielle-and-callum.quintondev.com"><div class="headerLink">Information form</div></a>
+                <a href="./origami.html"><div class="headerLinkActive">Origami</div></a>
+                <a href="https://admin.danielle-and-callum.quintondev.com/login"><div class="headerLink">Login</div></a>
+                <a href="mailto:support@quintondev.com"><div class="headerLink">Support</div></a>
+            </div>
+            <div id="headerMobileHamburger"></div>
+        </div>
+    </header>
+
+    <main class="origamiContent">
+        <section id="shopView" class="shopPanel">
+            <div class="shopEyebrow">A very serious shop</div>
+            <h1>Origami Paper</h1>
+            <p class="shopDescription">Fancy making something wonderful? Grab some origami paper for the wedding.</p>
+
+            <div class="productCard">
+                <div class="paperPreview" aria-hidden="true"><span>折</span></div>
+                <div class="productDetails">
+                    <h2>Origami Paper</h2>
+                    <p>One sheet of mysterious, foldable potential.</p>
+                    <div class="quantityRow">
+                        <span>Quantity</span>
+                        <div class="quantityControl">
+                            <button type="button" id="decreaseQuantity" aria-label="Decrease quantity">−</button>
+                            <span id="quantity">1</span>
+                            <button type="button" id="increaseQuantity" aria-label="Increase quantity">+</button>
+                        </div>
+                    </div>
+                    <button type="button" id="addToCart">Add to cart</button>
+                </div>
+            </div>
+
+            <div class="cartBar">
+                <div><strong>Cart</strong><span id="cartSummary">Nothing in your cart yet.</span></div>
+                <button type="button" id="checkoutButton" disabled>Checkout</button>
+            </div>
+        </section>
+
+        <section id="checkoutView" class="shopPanel hidden">
+            <button type="button" id="backToShop" class="backButton">← Back to shop</button>
+            <div class="shopEyebrow">Checkout</div>
+            <h1>Your origami order</h1>
+            <p class="shopDescription">No payment needed — this is just for fun.</p>
+
+            <form id="orderForm">
+                <label for="nameInput">Your name</label>
+                <input id="nameInput" name="name" type="text" maxlength="100" autocomplete="name" required>
+
+                <label for="emailInput">Your email</label>
+                <input id="emailInput" name="email" type="email" maxlength="254" autocomplete="email" required>
+
+                <div class="orderSummary">
+                    <span>Origami Paper</span>
+                    <strong>x<span id="checkoutQuantity">1</span></strong>
+                </div>
+
+                <div id="orderError" role="alert"></div>
+                <button type="submit" id="placeOrder">Place order</button>
+            </form>
+        </section>
+
+        <section id="successView" class="shopPanel hidden">
+            <div class="successMark">✓</div>
+            <div class="shopEyebrow">Order received</div>
+            <h1>Origami incoming!</h1>
+            <p class="shopDescription">Your order has been sent. No money was harmed in the making of this order.</p>
+            <p id="orderNumber"></p>
+            <a href="./origami.html" class="shopButton">Order some more</a>
+        </section>
+    </main>
+
+    <footer>
+        <div id="footerBranding">
+            <img src="./assets/QDS_full_logo.svg" id="footerLogo">
+            <div id="footerBrandDivider"></div>
+            <div class="footerBrandDetail">Web: <span class="footerBrandDetailReg">www.quintondev.com</span></div>
+            <div class="footerBrandDetail">Email: <span class="footerBrandDetailReg">support@quintondev.com</span></div>
+            <div id="copyright">© Quinton Dev Studios 2026. All rights reserved</div>
+        </div>
+        <div id="footerVerticalDivider"></div>
+        <div id="footerMobileDivider"></div>
+    </footer>
+    <script src="./origami.js"></script>
+</body>
+</html>
